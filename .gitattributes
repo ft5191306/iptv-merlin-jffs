@@ -1,0 +1,9 @@
+# Shell scripts must keep LF endings: a CRLF shebang silently breaks /bin/sh
+# on the router, with no error message that points at the cause.
+*.sh      text eol=lf
+services-start  text eol=lf
+firewall-start  text eol=lf
+
+*.js      text eol=lf
+*.md      text eol=lf
+*.json    text eol=lf

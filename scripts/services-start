@@ -1,0 +1,16 @@
+#!/bin/sh
+# /jffs/scripts/services-start
+#
+# Asuswrt-Merlin boot hook: runs once after system services have started.
+#
+# Requirements for this file to be executed at all:
+#   1) nvram jffs2_scripts=1  (Administration -> System -> Enable JFFS custom
+#      scripts and configs = Yes)
+#   2) the executable bit is set (chmod a+rx)
+#   3) UNIX line endings - a CRLF shebang makes the script silently fail
+#
+# Runs in the background so it never blocks the boot sequence.
+
+[ -x /jffs/scripts/iptv-route.sh ] && /jffs/scripts/iptv-route.sh &
+
+exit 0

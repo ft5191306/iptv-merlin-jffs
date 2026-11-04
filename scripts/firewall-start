@@ -1,0 +1,13 @@
+#!/bin/sh
+# /jffs/scripts/firewall-start
+#
+# Asuswrt-Merlin firewall hook: runs whenever the firewall restarts, e.g. after
+# a PPPoE redial or a WAN state change (both rebuild the filter tables).
+#
+# Why this exists: services-start only runs once at boot. A PPPoE redial or a
+# firewall restart can flush the INPUT-chain DHCP guard, so we re-apply the
+# whole rule set here. Both hooks call the same idempotent script.
+
+[ -x /jffs/scripts/iptv-route.sh ] && /jffs/scripts/iptv-route.sh &
+
+exit 0

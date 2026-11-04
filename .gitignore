@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log*
+
+# Local overrides holding real site addresses or credentials
+*.conf
+.env
+.env.*
+
+# Anything captured while debugging a specific installation
+*.log
+capture/
+backup/
+preflash/
